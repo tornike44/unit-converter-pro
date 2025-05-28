@@ -1,0 +1,296 @@
+# ===============================================
+# Java Spring Boot Project - Complete .gitignore
+# ===============================================
+
+# Compiled class files
+*.class
+
+# Log files
+*.log
+logs/
+*.log.*
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Virtual machine crash logs
+hs_err_pid*
+replay_pid*
+
+# ===============================================
+# Maven
+# ===============================================
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# ===============================================
+# Gradle
+# ===============================================
+.gradle
+**/build/
+!src/**/build/
+gradle-app.setting
+!gradle-wrapper.jar
+!gradle-wrapper.properties
+.gradletasknamecache
+
+# ===============================================
+# Spring Boot
+# ===============================================
+*.pid
+spring-shell.log
+*.tmp
+*.temp
+
+# ===============================================
+# IDE Files
+# ===============================================
+
+# IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+.idea_modules/
+atlassian-ide-plugin.xml
+
+# VS Code
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# Eclipse
+.metadata
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.loadpath
+.recommenders
+.project
+.externalToolBuilders/
+*.launch
+.pydevproject
+.cproject
+.autotools
+.factorypath
+.buildpath
+.target
+.tern-project
+.texlipse
+.springBeans
+.recommenders/
+.apt_generated/
+.apt_generated_test/
+
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# ===============================================
+# Operating System Files
+# ===============================================
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# ===============================================
+# Database Files
+# ===============================================
+*.db
+*.sqlite
+*.sqlite3
+*.db-shm
+*.db-wal
+
+# H2 Database
+*.h2.db
+*.trace.db
+*.lock.db
+
+# ===============================================
+# Security & Credentials
+# ===============================================
+application-local.properties
+application-secret.properties
+application-prod.properties
+*.key
+*.pem
+*.p12
+*.jks
+.env
+.env.local
+.env.production
+secrets/
+credentials/
+
+# ===============================================
+# Docker
+# ===============================================
+Dockerfile.prod
+docker-compose.override.yml
+.dockerignore
+
+# ===============================================
+# Testing
+# ===============================================
+/test-results/
+/coverage/
+jacoco.exec
+*.coverage
+*.coveragexml
+
+# ===============================================
+# Build Tools & Dependencies
+# ===============================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# ===============================================
+# Deployment
+# ===============================================
+*.deploy
+deployment/
+dist/
+build/
+
+# ===============================================
+# Temporary Files
+# ===============================================
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+.#*
+\#*#
+
+# ===============================================
+# Application Specific
+# ===============================================
+
+# Spring Boot DevTools
+.spring-boot-devtools.properties
+
+# Configuration files with sensitive data
+application-*.yml
+application-*.yaml
+!application-example.yml
+!application-template.yml
+
+# Custom logs
+conversion.log
+api.log
+error.log
+
+# Generated documentation
+/docs/build/
+/docs/.vuepress/dist/
+
+# Cache directories
+.cache/
+.tmp/
+
+# Local environment files
+local.properties
+.local
+*.local
+
+# Backup files
+*.backup
+*.old
+*.orig
+
+# ===============================================
+# Project Specific (Unit Converter Pro)
+# ===============================================
+
+# Test output files
+diagnostic.txt
+test-output/
+conversion-history.json
+
+# Custom configuration
+custom-conversions.json
+rate-cache/
+
+# Performance test results
+benchmark-results/
+performance.log
+
+# ===============================================
+# End of .gitignore
+# ===============================================

@@ -1,0 +1,68 @@
+### Health Check
+GET http://localhost:8081/api/convert/health
+
+### Test Conversion Metric: 5 km -> meters
+POST http://localhost:8081/api/convert
+Content-Type: application/json
+
+{
+  "value": 5.0,
+  "fromUnit": "km",
+  "toUnit": "m",
+  "type": "DISTANCE"
+}
+
+### Test Conversion Metric: 1000 mm -> km
+POST http://localhost:8081/api/convert
+Content-Type: application/json
+
+{
+  "value": 1000000.0,
+  "fromUnit": "mm",
+  "toUnit": "km",
+  "type": "DISTANCE"
+}
+
+### Test Conversion Imperial: 2 feet -> inches
+POST http://localhost:8081/api/convert
+Content-Type: application/json
+
+{
+  "value": 2.0,
+  "fromUnit": "ft",
+  "toUnit": "in",
+  "type": "DISTANCE"
+}
+
+### Test Cross-system: 1 meter -> feet
+POST http://localhost:8081/api/convert
+Content-Type: application/json
+
+{
+  "value": 1.0,
+  "fromUnit": "m",
+  "toUnit": "ft",
+  "type": "DISTANCE"
+}
+
+### Test Error: Invalid unit
+POST http://localhost:8081/api/convert
+Content-Type: application/json
+
+{
+  "value": 5.0,
+  "fromUnit": "invalidUnit",
+  "toUnit": "m",
+  "type": "DISTANCE"
+}
+
+### Test Nano to Tera (extreme conversion)
+POST http://localhost:8081/api/convert
+Content-Type: application/json
+
+{
+  "value": 1.0,
+  "fromUnit": "nm",
+  "toUnit": "Tm",
+  "type": "DISTANCE"
+}
