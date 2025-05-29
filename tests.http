@@ -156,3 +156,82 @@ Content-Type: application/json
   "toUnit": "l",
   "type": "VOLUME"
 }
+
+### TEMPERATURE TESTS ###
+
+### Test Temperature: 0°C -> Fahrenheit (freezing point)
+POST http://localhost:8081/api/convert
+Content-Type: application/json
+
+{
+  "value": 0.0,
+  "fromUnit": "C",
+  "toUnit": "F",
+  "type": "TEMPERATURE"
+}
+
+### Test Temperature: 32°F -> Celsius 
+POST http://localhost:8081/api/convert
+Content-Type: application/json
+
+{
+  "value": 32.0,
+  "fromUnit": "F",
+  "toUnit": "C",
+  "type": "TEMPERATURE"
+}
+
+### Test Temperature: 20°C -> Fahrenheit (room temperature)
+POST http://localhost:8081/api/convert
+Content-Type: application/json
+
+{
+  "value": 20.0,
+  "fromUnit": "C",
+  "toUnit": "F",
+  "type": "TEMPERATURE"
+}
+
+### Test Temperature: 0°C -> Kelvin (absolute zero offset)
+POST http://localhost:8081/api/convert
+Content-Type: application/json
+
+{
+  "value": 0.0,
+  "fromUnit": "C",
+  "toUnit": "K",
+  "type": "TEMPERATURE"
+}
+
+### Test Temperature: 98.6°F -> Celsius (body temperature)
+POST http://localhost:8081/api/convert
+Content-Type: application/json
+
+{
+  "value": 98.6,
+  "fromUnit": "F",
+  "toUnit": "C",
+  "type": "TEMPERATURE"
+}
+
+### Test Temperature: 273.15K -> Fahrenheit
+POST http://localhost:8081/api/convert
+Content-Type: application/json
+
+{
+  "value": 273.15,
+  "fromUnit": "K",
+  "toUnit": "F",
+  "type": "TEMPERATURE"
+}
+
+### Test Temperature Error: Invalid unit
+POST http://localhost:8081/api/convert
+Content-Type: application/json
+
+{
+  "value": 25.0,
+  "fromUnit": "X",
+  "toUnit": "C",
+  "type": "TEMPERATURE"
+}
