@@ -235,3 +235,104 @@ Content-Type: application/json
   "toUnit": "C",
   "type": "TEMPERATURE"
 }
+
+### TIME TESTS ###
+
+### Test Time: 2 minutes -> seconds
+POST http://localhost:8081/api/convert
+Content-Type: application/json
+
+{
+  "value": 2.0,
+  "fromUnit": "min",
+  "toUnit": "s",
+  "type": "TIME"
+}
+
+### Test Time: 1 hour -> minutes
+POST http://localhost:8081/api/convert
+Content-Type: application/json
+
+{
+  "value": 1.0,
+  "fromUnit": "h",
+  "toUnit": "min",
+  "type": "TIME"
+}
+
+### Test Time: 5000 milliseconds -> seconds
+POST http://localhost:8081/api/convert
+Content-Type: application/json
+
+{
+  "value": 5000.0,
+  "fromUnit": "ms",
+  "toUnit": "s",
+  "type": "TIME"
+}
+
+### Test Time: 1 day -> hours
+POST http://localhost:8081/api/convert
+Content-Type: application/json
+
+{
+  "value": 1.0,
+  "fromUnit": "day",
+  "toUnit": "h",
+  "type": "TIME"
+}
+
+### Test Time: 2 weeks -> days
+POST http://localhost:8081/api/convert
+Content-Type: application/json
+
+{
+  "value": 2.0,
+  "fromUnit": "week",
+  "toUnit": "day",
+  "type": "TIME"
+}
+
+### Test Time: 1 year -> days
+POST http://localhost:8081/api/convert
+Content-Type: application/json
+
+{
+  "value": 1.0,
+  "fromUnit": "year",
+  "toUnit": "day",
+  "type": "TIME"
+}
+
+### Test Time: 1000 nanoseconds -> microseconds
+POST http://localhost:8081/api/convert
+Content-Type: application/json
+
+{
+  "value": 1000.0,
+  "fromUnit": "ns",
+  "toUnit": "μs",
+  "type": "TIME"
+}
+
+### Test Time: 1 month -> weeks
+POST http://localhost:8081/api/convert
+Content-Type: application/json
+
+{
+  "value": 1.0,
+  "fromUnit": "month",
+  "toUnit": "week",
+  "type": "TIME"
+}
+
+### Test Time Error: Invalid unit
+POST http://localhost:8081/api/convert
+Content-Type: application/json
+
+{
+  "value": 5.0,
+  "fromUnit": "invalidTimeUnit",
+  "toUnit": "s",
+  "type": "TIME"
+}
