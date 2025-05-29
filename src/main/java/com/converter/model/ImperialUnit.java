@@ -9,7 +9,12 @@ public enum ImperialUnit {
     OUNCE("oz", "weight", 1.0),
     POUND("lb", "weight", 16.0),
     STONE("st", "weight", 224.0),
-    TON("ton", "weight", 32000.0);
+    TON("ton", "weight", 32000.0),
+    
+    FLUID_OUNCE("fl_oz", "volume", 1.0),
+    CUP("cup", "volume", 8.0),
+    PINT("pint", "volume", 16.0),
+    GALLON("gallon", "volume", 128.0);
     
     private final String symbol;
     private final String category;

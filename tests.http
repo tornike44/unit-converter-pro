@@ -66,3 +66,93 @@ Content-Type: application/json
   "toUnit": "Tm",
   "type": "DISTANCE"
 }
+
+### VOLUME TESTS ###
+
+### Test Volume Metric: 2 liters -> milliliters
+POST http://localhost:8081/api/convert
+Content-Type: application/json
+
+{
+  "value": 2.0,
+  "fromUnit": "l",
+  "toUnit": "ml",
+  "type": "VOLUME"
+}
+
+### Test Volume Metric: 1500 ml -> liters
+POST http://localhost:8081/api/convert
+Content-Type: application/json
+
+{
+  "value": 1500.0,
+  "fromUnit": "ml",
+  "toUnit": "l",
+  "type": "VOLUME"
+}
+
+### Test Volume Imperial: 1 gallon -> fluid ounces
+POST http://localhost:8081/api/convert
+Content-Type: application/json
+
+{
+  "value": 1.0,
+  "fromUnit": "gallon",
+  "toUnit": "fl_oz",
+  "type": "VOLUME"
+}
+
+### Test Volume Imperial: 4 cups -> pints
+POST http://localhost:8081/api/convert
+Content-Type: application/json
+
+{
+  "value": 4.0,
+  "fromUnit": "cup",
+  "toUnit": "pint",
+  "type": "VOLUME"
+}
+
+### Test Cross-system: 1 liter -> fluid ounces
+POST http://localhost:8081/api/convert
+Content-Type: application/json
+
+{
+  "value": 1.0,
+  "fromUnit": "l",
+  "toUnit": "fl_oz",
+  "type": "VOLUME"
+}
+
+### Test Cross-system: 1 gallon -> liters
+POST http://localhost:8081/api/convert
+Content-Type: application/json
+
+{
+  "value": 1.0,
+  "fromUnit": "gallon",
+  "toUnit": "l",
+  "type": "VOLUME"
+}
+
+### Test Volume extreme: 0.001 kiloliters -> milliliters
+POST http://localhost:8081/api/convert
+Content-Type: application/json
+
+{
+  "value": 0.001,
+  "fromUnit": "kl",
+  "toUnit": "ml",
+  "type": "VOLUME"
+}
+
+### Test Volume Error: Invalid unit
+POST http://localhost:8081/api/convert
+Content-Type: application/json
+
+{
+  "value": 5.0,
+  "fromUnit": "invalidVolumeUnit",
+  "toUnit": "l",
+  "type": "VOLUME"
+}
