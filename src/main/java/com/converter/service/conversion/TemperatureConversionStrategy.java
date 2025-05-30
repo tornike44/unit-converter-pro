@@ -10,27 +10,25 @@ import com.converter.model.ConversionType;
 
 @Component
 public class TemperatureConversionStrategy extends AbstractConversionStrategy {
-    
+
     @Override
     public ConversionResult convert(ConversionRequest request) {
         try {
             Double result = convertTemperature(
-                request.getValue(),
-                request.getFromUnit(),
-                request.getToUnit()
-            );
-            
+                    request.getValue(),
+                    request.getFromUnit(),
+                    request.getToUnit());
+
             ConversionResult conversionResult = new ConversionResult(
-                request.getValue(),
-                request.getFromUnit(),
-                result,
-                request.getToUnit(),
-                request.getType()
-            );
-            
+                    request.getValue(),
+                    request.getFromUnit(),
+                    result,
+                    request.getToUnit(),
+                    request.getType());
+
             conversionResult.setFormula(getFormula(request.getFromUnit(), request.getToUnit()));
             return conversionResult;
-            
+
         } catch (Exception e) {
             ConversionResult error = new ConversionResult();
             error.setSuccess(false);
@@ -38,10 +36,10 @@ public class TemperatureConversionStrategy extends AbstractConversionStrategy {
             return error;
         }
     }
-    
+
     private Double convertTemperature(Double value, String from, String to) {
         String conversion = from.toUpperCase() + "_TO_" + to.toUpperCase();
-        
+
         switch (conversion) {
             case "C_TO_F":
                 return (value * 9.0 / 5.0) + 32.0;
@@ -63,10 +61,10 @@ public class TemperatureConversionStrategy extends AbstractConversionStrategy {
                 throw new IllegalArgumentException("Unsupported temperature conversion: " + from + " to " + to);
         }
     }
-    
+
     private String getFormula(String from, String to) {
         String conversion = from.toUpperCase() + "_TO_" + to.toUpperCase();
-        
+
         switch (conversion) {
             case "C_TO_F":
                 return "F = (C × 9/5) + 32";
@@ -84,12 +82,12 @@ public class TemperatureConversionStrategy extends AbstractConversionStrategy {
                 return null;
         }
     }
-    
+
     @Override
     public boolean supports(ConversionType type) {
         return type == ConversionType.TEMPERATURE;
     }
-    
+
     @Override
     protected Map<String, Double> getFactors() {
         return Map.of();
