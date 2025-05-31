@@ -1,6 +1,5 @@
 package com.converter.service.conversion;
 
-import java.util.ArrayList;
 import java.util.Map;
 
 import com.converter.model.ConversionRequest;
@@ -60,10 +59,5 @@ public abstract class AbstractConversionStrategy implements ConversionStrategy {
     @Override
     public boolean isRealTime() {
         return false;
-    }
-
-    @Override
-    public List<String> getAvailableUnits() {
-        return new ArrayList<>(getFactors().keySet());
     }
 }
