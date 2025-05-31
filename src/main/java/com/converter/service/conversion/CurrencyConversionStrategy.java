@@ -1,7 +1,5 @@
 package com.converter.service.conversion;
 
-import java.util.Arrays;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cache.annotation.Cacheable;
@@ -89,13 +87,5 @@ public class CurrencyConversionStrategy implements ConversionStrategy {
     @Override
     public boolean isRealTime() {
         return true;
-    }
-
-    @Override
-    public List<String> getAvailableUnits() {
-        return Arrays.asList(
-                "USD", "EUR", "GBP", "JPY", "AUD", "CAD", "CHF", "CNY",
-                "SEK", "NZD", "MXN", "SGD", "HKD", "NOK", "KRW", "TRY",
-                "RUB", "INR", "BRL", "ZAR");
     }
 }
