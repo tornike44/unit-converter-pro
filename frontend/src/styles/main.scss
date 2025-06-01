@@ -1,0 +1,54 @@
+@import './variables';
+@import './mixins';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+  color: $gray-700;
+}
+
+body {
+  background-color: $gray-50;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 $space-4;
+
+  @include desktop-up {
+    padding: 0 $space-6;
+  }
+}
+
+.card {
+  @include card-base;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-muted {
+  color: $gray-500;
+}
+
+.el-card {
+  border: none;
+  box-shadow: $shadow-sm;
+
+  &:hover {
+    box-shadow: $shadow-md;
+  }
+}
+
+.el-button {
+  border-radius: $radius-md;
+}
